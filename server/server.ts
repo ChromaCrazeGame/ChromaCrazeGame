@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.use((req, res) => res.status(404).send('Page Not Found'));
 
-app.use((err, req, res) => {
+app.use((err: Error, req: Request, res: Response) => {
     const defaultErr = {
         log: 'Express error handler caught unknown middleware error',
         status: 500,
@@ -28,5 +28,4 @@ app.use((err, req, res) => {
     return res.status(errorObj.status).json(errorObj.message);
 });
 
-  
 module.exports = app;
