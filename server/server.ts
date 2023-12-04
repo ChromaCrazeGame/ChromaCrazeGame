@@ -4,7 +4,7 @@ import express, { Response, Request } from 'express';
 const PORT = 3000;
 const app = express();
 
-app.listen(PORT, console.log(`Listening on PORT: ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 
 app.use(express.json());
 app.use(express.urlencoded());
