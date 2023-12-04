@@ -12,9 +12,11 @@
   "name": "chromacraze",
   "version": "0.0.0",
   "description": "A fast-paced multiplayer browser clicker game",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js",
+    "start-dev": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
