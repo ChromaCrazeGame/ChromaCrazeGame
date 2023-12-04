@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
     return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
-app.use((req, res) => res.sendStatus(404).send('Page Not Found'));
+app.use((req, res) => res.status(404).send('Page Not Found'));
 
 app.use((err, req, res) => {
     const defaultErr = {
