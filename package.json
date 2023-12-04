@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/ChromaCrazeGame/ChromaCrazeGame/issues"
   },
-  "homepage": "https://github.com/ChromaCrazeGame/ChromaCrazeGame#readme"
+  "homepage": "https://github.com/ChromaCrazeGame/ChromaCrazeGame#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.13.2",
+    "@typescript-eslint/parser": "^6.13.2",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2"
+  }
 }
