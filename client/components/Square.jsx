@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Square = () => {
-  return (
-    <>
-      <div class="square"></div>
-    </>
-  );
+    return (
+        <>
+            <div className="square"></div>
+        </>
+    );
 };
 
 export default Square;
