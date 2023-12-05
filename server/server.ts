@@ -9,11 +9,6 @@ app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 app.use(express.json());
 app.use(express.urlencoded());
 
-// thought by adding a route on the server side, it would clear up the gameboard path, but this renders content from the default path
-// app.get('/gameboard', (req, res) => {
-//     return res.status(200);
-// })
-
 app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
 app.get('/', (req, res) => {

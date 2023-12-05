@@ -6,4 +6,4 @@
 
 const initialState = {
   
-}
+};

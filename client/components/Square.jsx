@@ -5,7 +5,7 @@ const Square = () => {
     <>
       <div class="square"></div>
     </>
-  )
-}
+  );
+};
 
 export default Square;

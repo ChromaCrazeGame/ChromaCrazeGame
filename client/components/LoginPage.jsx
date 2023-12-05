@@ -7,7 +7,7 @@ const LoginPage = () => {
       <h1>Log in here chroma crazers!</h1>
       <Link to='/gameboard'>Login</Link>
     </div>
-  )
-}
+  );
+};
 
 export default LoginPage;
