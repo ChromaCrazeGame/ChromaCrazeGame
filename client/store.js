@@ -3,8 +3,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducers from './reducers/reducers';
 
 const store = createStore(
-  reducers,
-  composeWithDevTools(),
+    reducers,
+    composeWithDevTools(),
 );
 
 export default store;
