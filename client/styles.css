@@ -1,6 +1,14 @@
-.square {
+#square {
   border: solid;
   border-color: black;
   height: 50px;
   width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#row {
+  display: flex;
+  flex-direction: row;
 }

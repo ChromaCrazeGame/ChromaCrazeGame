@@ -1,11 +1,14 @@
 import React from 'react';
 
 const Square = () => {
-  return (
-    <>
-      <div class="square"></div>
-    </>
-  );
+    const clickHandler = () => {
+        console.log('color changed!');
+    };
+    return (
+        <>
+            <div id="square" onClick={clickHandler}></div>
+        </>
+    );
 };
 
 export default Square;
