@@ -1,12 +1,14 @@
 import React from 'react';
 import Row from './Row';
+import Timer from './timer';
 
 const GameBoard = () => {
-  return (
-    <div>
-      <Row/>
-    </div>
-  );
+    return (
+        <div>
+            <Timer />
+            <Row/>
+        </div>
+    );
 };
 
 export default GameBoard;

@@ -11,11 +11,11 @@ app.use(express.urlencoded());
 
 app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
     return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
-app.use((req, res) => res.status(404).send('Page Not Found'));
+app.use((req: Request, res: Response) => res.status(404).send('Page Not Found'));
 
 app.use((err: Error, req: Request, res: Response) => {
     const defaultErr = {
