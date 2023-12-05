@@ -2,15 +2,15 @@ import React from 'react';
 import Square from './Square';
 
 const Row = () => {
-  const rows = [];
-  for (let i = 0; i < 100; i++) {
-    rows.push(<Square key={i}/>) 
-  }
-  return (
-    <div>
-      {rows}
-    </div>
-  );
+    const row = [];
+    for (let i = 1; i <= 10; i++) {
+        row.push(<Square key={`square${i}`}/>);
+    }
+    return (
+        <div id="row">
+            {row}
+        </div>
+    );
 };
 
 export default Row;
