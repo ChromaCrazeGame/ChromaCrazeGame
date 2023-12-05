@@ -5,6 +5,9 @@ import GameBoard from './GameBoard';
 
 // gameboard path currently giving 404, looking into client side vs server side rendering
 
+import { io } from 'socket.io-client';
+const socket = io();
+
 const App = () => {
   return (
     <div>
