@@ -39,10 +39,13 @@ module.exports = {
   devServer: {
     port: 8080,
     proxy: {
-      '/': 'http://localhost:3000',
+      '/socket.io': {
+        target: 'http://localhost:3000',
+        ws: true,
+      },
     },
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-  }
-}
+  },
+};
