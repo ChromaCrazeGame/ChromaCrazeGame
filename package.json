@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
@@ -13,10 +12,8 @@
   },
   "name": "chromacraze",
   "version": "0.0.0",
-=======
   "name": "chromacrazegame",
   "version": "1.0.0",
->>>>>>> bfa7ea7ac4c5d8a03b2a0408fcd2b1a0a827f210
   "description": "A fast-paced multiplayer browser clicker game",
   "main": "server.js",
   "scripts": {
