@@ -1,10 +1,10 @@
-const path = require('path');
-const express = require('express');
+import path from 'path';
+import express, { Response, Request } from 'express';
 
 const PORT = 3000;
 const app = express();
 
-app.listen(PORT, console.log(`Listening on PORT: ${PORT}`));
+app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -15,9 +15,9 @@ app.get('/', (req, res) => {
     return res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
-app.use((req, res) => res.sendStatus(404).send('Page Not Found'));
+app.use((req, res) => res.status(404).send('Page Not Found'));
 
-app.use((err, req, res) => {
+app.use((err: Error, req: Request, res: Response) => {
     const defaultErr = {
         log: 'Express error handler caught unknown middleware error',
         status: 500,
@@ -28,5 +28,4 @@ app.use((err, req, res) => {
     return res.status(errorObj.status).json(errorObj.message);
 });
 
-  
 module.exports = app;

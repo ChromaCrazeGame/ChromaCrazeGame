@@ -15,10 +15,11 @@
   "name": "chromacrazegame",
   "version": "1.0.0",
   "description": "A fast-paced multiplayer browser clicker game",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "concurrently \"webpack-dev-server --mode development --open --hot\" \"nodemon ./server/server.js\"",
+    "dev": "concurrently \"webpack-dev-server --mode development --open --hot\" \"nodemon ./server/server.ts\"",
     "build": "webpack --mode production",
+    "start": "nodemon server/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -41,6 +42,8 @@
     "redux": "^5.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.3",
     "@babel/core": "^7.23.5",
     "@babel/preset-env": "^7.23.5",
     "@babel/preset-react": "^7.23.3",
@@ -55,6 +58,8 @@
     "nodemon": "^3.0.2",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
