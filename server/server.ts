@@ -9,6 +9,10 @@ app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
 app.use(express.json());
 app.use(express.urlencoded());
 
+app.get('/gameboard', (req, res) => {
+    return res.status(200);
+})
+
 app.use('/', express.static(path.resolve(__dirname, '../dist')));
 
 app.get('/', (req, res) => {
