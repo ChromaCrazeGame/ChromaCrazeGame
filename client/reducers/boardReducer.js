@@ -1,17 +1,32 @@
+import { CHANGE_COLOR } from '../constants/actionTypes';
 
+// create a 2d array that represents the gameboard
+const board = [];
+for (let i = 0; i < 10; i++) {
+  board.push(new Array(10).fill('inherit'));
+}
 
+const initialState = {
+  board: board,
+};
 
-// here we want initialState declared for the board
-// do i want to stuff every piece of state in here tho...
+const boardReducer = (state = initialState, action) => {
+  switch (action.type) {
+  case CHANGE_COLOR: {
+    const board = state.board.slice();
+    const row   = action.payload.row;
+    const col   = action.payload.column;
 
-// const initialState = {
-//     color: 'white',
+    board[row][col] = action.payload.color;
 
-// };
+    return {
+      ...state,
+      board,
+    };
+  }
+  default:
+    return state;
+  }
+};
 
-// const boardReducer = (state = initialState, action) => {
-//   switch (action.type) {
-    
-//   }
-// };
-
+export default boardReducer;

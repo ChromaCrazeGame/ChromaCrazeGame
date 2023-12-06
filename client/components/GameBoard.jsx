@@ -1,16 +1,21 @@
 import React from 'react';
-import Row from './Row';
-import Timer from './Timer';
+import { useSelector } from 'react-redux';
 
+import Row from './Row';
 
 const GameBoard = () => {
+  const boardState = useSelector(store => store.board.board);
+
   const rows = [];
-  for (let i = 1; i <= 10; i++) {
-    rows.push(<Row key={`row${i}`}/>);
+  for (let row = 0; row < boardState.length; row++) {
+    rows.push(<Row
+      key={`row-${row}`}
+      row={row}
+    />);
   }
+
   return (
-    <div>
-      <Timer />
+    <div id="gameboard">
       {rows}
     </div>
   );
