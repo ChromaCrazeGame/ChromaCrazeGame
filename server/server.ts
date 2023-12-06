@@ -28,7 +28,7 @@ app.get('/', (req: Request, res: Response): void => {
 // initiates a new websocket connection
 io.on('connection', (socket: Socket): void => {
   console.log('A game client connected');
-
+  
   // `.emit()` can be used server-side to broadcast something
   // to all connected clients, including the original sender
   // of the 'connection' event we're currently handling.
@@ -36,7 +36,7 @@ io.on('connection', (socket: Socket): void => {
   // if you want to leave the original sender out, you can
   // call `socket.broadcast.emit()`.
   socket.emit('init state', { state: gameState });
-
+  
   // 'disconnect' is also a built-in event, which fires when a client
   // connection terminates
   socket.on('disconnect', (): void => {

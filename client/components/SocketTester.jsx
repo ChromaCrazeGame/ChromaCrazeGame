@@ -2,6 +2,10 @@ import React from 'react';
 import { socket } from '../socket';
 
 const SocketTester = ({ isConnected, demoButtonPresses }) => {
+
+  // our click handler emits a message to the server.
+  // to trace this message, have a look at
+  // server/sockets/demoSocket.ts.
   const handleButtonClick = () => {
     socket.emit('demo button pressed');
   };
