@@ -47,8 +47,10 @@ io.on('connection', (socket: Socket): void => {
 // this is how we can organize out socket-based event logic
 // into their own files, much like express routers:
 import demoSocket from './sockets/demoSocket';
-demoSocket(io, gameState);
+import squareSocket from './sockets/squareSocket';
 
+demoSocket(io, gameState);
+squareSocket(io, gameState);
 // =========================================================================
 
 

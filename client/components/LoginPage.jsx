@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import { useDispatch } from 'react-redux';
+import * as actions from '../actions/playerActions';
 
 const LoginPage = () => {
 
   //using state to store users data
   const [ user, setUser ] = useState({});
+  // const [youtubeID] = useState('i-GgLuRGecY');
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   //response comes from google docs from the identity services
   function handleCallbackResponse(response) {
@@ -16,10 +20,14 @@ const LoginPage = () => {
     //jwt_decode is a func that allows the jwt token to be decoded into object
     const userObject = jwtDecode(response.credential);
     console.log(userObject);
-    setUser(userObject);
+    dispatch(actions.playerEnterActionCreator({
+      name: userObject.name,
+      picture: userObject.picture,
+    }));
+    // setUser(userObject);
     //hide the signin button if already signed in
     document.getElementById('signInDiv').hidden = true;
-    // navigate('/gameboard');
+    navigate('/gamepage');
   }
 
   function handleSignOut() {
@@ -27,10 +35,6 @@ const LoginPage = () => {
     setUser({});
     //show the sign in again
     document.getElementById('signInDiv').hidden = false;
-  }
-
-  function handleNavigate() {
-    navigate('/gamepage');
   }
 
   //useEffect will render once page is loaded
@@ -54,12 +58,18 @@ const LoginPage = () => {
 
   return (
     <div className="App">
+      <h1>Welcome To The ChromaCraze Game!</h1>
+      <iframe className='video'
+        width="350"
+        height="550"
+        src={'https://youtube.com/embed/i-GgLuRGecY?rel=0&autoplay=1&mute=1'}>
+      </iframe>
+      
       <div id="signInDiv"></div>
       {/* conditionally render by using && op */}
       { Object.keys(user).length != 0 &&
             <div>
               <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
-              <button onClick={(e) => handleNavigate(e)}>Play</button>
             </div>
       }
       { user &&
