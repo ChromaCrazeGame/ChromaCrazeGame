@@ -5,7 +5,7 @@ import { socket } from '../socket';
 
 import SocketTester from './SocketTester';
 import LoginPage from './LoginPage';
-import GameBoard from './GameBoard';
+import GameContainer from '../containers/GameContainer';
 
 // gameboard path currently giving 404, looking into client side vs server side rendering
 
@@ -37,7 +37,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path='/' element={<LoginPage/>}/>
-        <Route path='/gameboard' element={<GameBoard/>}/> 
+        <Route path='/gamepage' element={<GameContainer/>}/> 
       </Routes>
       <SocketTester
         isConnected={isConnected ? 'true' : 'false'}
