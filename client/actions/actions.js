@@ -1,7 +1,7 @@
 import { CHANGE_COLOR } from '../constants/actionTypes';
 
-export const changeColorActionCreator = (squareId) => ({
+export const changeColorActionCreator = (row, column, color) => ({
   type: CHANGE_COLOR,
-  payload: ['red', squareId]
+  payload: { row: row, column: column, color: color }
 });
 
