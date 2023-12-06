@@ -2,12 +2,15 @@ import path from 'path';
 import { createServer } from 'node:http';
 import express, { Response, Request } from 'express';
 import { Server as SocketIOServer, Socket } from 'socket.io';
+import GameState from './GameState';
 
 const PORT = 3000;
+const gameState = new GameState();
 
 const app = express();
 const server = createServer(app);
 const io = new SocketIOServer(server);
+
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -20,6 +23,7 @@ app.get('/', (req: Request, res: Response): void => {
 
 // socket.io event handling
 // =========================================================================
+//
 // 'connection' is a built in event that fires when a client
 // initiates a new websocket connection
 io.on('connection', (socket: Socket): void => {
@@ -31,7 +35,7 @@ io.on('connection', (socket: Socket): void => {
   //
   // if you want to leave the original sender out, you can
   // call `socket.broadcast.emit()`.
-  socket.emit('connected', { message: 'a new client connected' });
+  socket.emit('init state', { state: gameState });
 
   // 'disconnect' is also a built-in event, which fires when a client
   // connection terminates
@@ -39,6 +43,14 @@ io.on('connection', (socket: Socket): void => {
     console.log('client disconnected');
   });
 });
+
+// this is how we can organize out socket-based event logic
+// into their own files, much like express routers:
+import demoSocket from './sockets/demoSocket';
+demoSocket(io, gameState);
+
+// =========================================================================
+
 
 app.use((req, res): Response => res.status(404).send('Page Not Found'));
 

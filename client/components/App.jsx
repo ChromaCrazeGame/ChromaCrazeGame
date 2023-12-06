@@ -11,6 +11,7 @@ import GameBoard from './GameBoard';
 
 const App = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
+  const [gameState, setGameState] = useState({});
 
   useEffect(() => {
     const onConnect = () => {
@@ -21,8 +22,21 @@ const App = () => {
       setIsConnected(false);
     };
 
+    const onInitGameState = ({ state }) => {
+      setGameState(state);
+    };
+
+    const onDemoButtonPress = ({ presses }) => {
+      setGameState(gameState => ({
+        ...gameState,
+        demoButtonPresses: presses,
+      }));
+    };
+
     socket.on('connect', onConnect);
     socket.on('disconnect', onDisconnect);
+    socket.on('init state', onInitGameState);
+    socket.on('demo button pressed', onDemoButtonPress);
 
     return () => {
       // event listeners registered in the setup function
@@ -30,6 +44,7 @@ const App = () => {
       // cleanup callback to prevent duplicate event registrations
       socket.off('connect', onConnect);
       socket.off('disconnect', onDisconnect);
+      socket.off('demo button pressed', onDemoButtonPress);
     };
   }, []);
 
@@ -41,6 +56,7 @@ const App = () => {
       </Routes>
       <SocketTester
         isConnected={isConnected ? 'true' : 'false'}
+        demoButtonPresses={gameState.demoButtonPresses}
       />
     </div>
   );
