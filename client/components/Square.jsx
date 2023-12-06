@@ -1,5 +1,5 @@
 import React from 'react';
-import * as actions from '../actions/actions';
+import * as actions from '../actions/gameboardActions';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Square = ({ row, column }) => {
