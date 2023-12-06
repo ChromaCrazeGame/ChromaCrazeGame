@@ -1,6 +1,6 @@
 import React from 'react';
 import Row from './Row';
-import Timer from './timer';
+import Timer from './Timer';
 
 
 const GameBoard = () => {
