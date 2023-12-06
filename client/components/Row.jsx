@@ -8,7 +8,7 @@ const Row = (props) => {
     row.push(<Square key={`square${i}`} column= {i} row={props.row}/>);
   }
   return (
-    <div id="row">
+    <div className="row">
       {row}
     </div>
   );

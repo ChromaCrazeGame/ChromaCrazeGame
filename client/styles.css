@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-#row {
+.row {
   display: flex;
   flex-direction: row;
 }
