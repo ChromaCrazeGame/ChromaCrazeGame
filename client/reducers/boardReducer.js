@@ -1,17 +1,16 @@
-
-
-
 // here we want initialState declared for the board
 // do i want to stuff every piece of state in here tho...
 
 import { CHANGE_COLOR } from '../constants/actionTypes';
 
+// create a 2d array that represents the gameboard
+const board = [];
+for (let i = 0; i < 10; i++) {
+  board.push(new Array(10).fill('inherit'));
+}
+
 const initialState = {
-  board: []
-  // square: {
-  //   color: 'white',
-  //   squareId: null,
-  // }
+  board: board,
 };
 
 const boardReducer = (state = initialState, action) => {
@@ -31,4 +30,3 @@ const boardReducer = (state = initialState, action) => {
 };
 
 export default boardReducer;
-
