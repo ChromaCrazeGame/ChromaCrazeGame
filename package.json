@@ -1,4 +1,5 @@
 {
+  
   "name": "chromacrazegame",
   "version": "1.0.0",
   "description": "A fast-paced multiplayer browser clicker game",
@@ -27,8 +28,12 @@
     "ngrok": "^5.0.0-beta.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^9.0.1",
-    "redux": "^5.0.0"
+    "react-redux": "^8.0.0",
+    "react-router": "^6.18.0",
+    "react-router-dom": "^6.18.0",
+    "redux": "^4.0.0",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.23.5",
@@ -45,6 +50,7 @@
     "eslint-plugin-react": "^7.33.2",
     "html-webpack-plugin": "^5.5.3",
     "nodemon": "^3.0.2",
+    "redux-devtools-extension": "^2.13.9",
     "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
     "ts-node": "^10.9.1",
