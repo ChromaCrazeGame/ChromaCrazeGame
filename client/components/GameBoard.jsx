@@ -1,6 +1,8 @@
 import React from 'react';
 import Row from './Row';
 import Timer from './Timer';
+import Sidebar from './Sidebar';
+import '../styles.css';
 
 const GameBoard = () => {
   const rows = [];
@@ -10,6 +12,7 @@ const GameBoard = () => {
   return (
     <div>
       <Timer />
+      <Sidebar />
       {rows}
     </div>
   );
