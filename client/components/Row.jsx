@@ -1,15 +1,21 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import Square from './Square';
 
-const Row = (props) => {
-  // console.log(props)
-  const row = [];
-  for (let i = 1; i <= 10; i++) {
-    row.push(<Square key={`square${i}`} column= {i} row={props.row}/>);
+const Row = ({ row }) => {
+  const rowState = useSelector(store => store.board.board[row]);
+  const squares = [];
+  for (let col = 0; col < rowState.length; col++) {
+    squares.push(<Square
+      key={`square-${row}${col}`}
+      row={row}
+      column={col}
+    />);
   }
   return (
     <div className="row">
-      {row}
+      {squares}
     </div>
   );
 };
