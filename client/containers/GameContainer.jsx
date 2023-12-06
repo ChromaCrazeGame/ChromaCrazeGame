@@ -61,10 +61,12 @@ const GameContainer = () => {
   }, []);
 
   return (
-    <div>
+    <div id="game">
       <Timer/>
-      <GameBoard />
-      <Sidebar />
+      <main>
+        <GameBoard />
+        <Sidebar />
+      </main>
     </div>
   );
 };
