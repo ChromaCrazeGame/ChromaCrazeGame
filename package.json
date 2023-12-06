@@ -50,18 +50,49 @@
   "homepage": "https://github.com/ChromaCrazeGame/ChromaCrazeGame#readme",
   
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "jwt-decode": "^4.0.0",
-    "ngrok": "^5.0.0-beta.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^8.0.0",
-    "react-router": "^6.18.0",
-    "react-router-dom": "^6.18.0",
-    "redux": "^4.0.0",
-    "socket.io": "^4.7.2",
-    "socket.io-client": "^4.7.2"
+  
+    
+  "cors": "^2.8.5",
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "jwt-decode": "^4.0.0",
+  
+    
+  "ngrok": "^5.0.0-beta.2",
+  
+    
+  "react": "^18.2.0",
+  
+    
+  "react-dom": "^18.2.0",
+  
+    
+  "react-player": "^2.13.0",
+  
+    
+  "react-redux": "^8.0.0",
+  
+    
+  "react-router": "^6.18.0",
+  
+    
+  "react-router-dom": "^6.18.0",
+  
+    
+  "react-youtube": "^10.1.0",
+  
+    
+  "redux": "^4.0.0",
+  
+    
+  "socket.io": "^4.7.2",
+  
+    
+  "socket.io-client": "^4.7.2"
+  
   },
   
   "devDependencies": {

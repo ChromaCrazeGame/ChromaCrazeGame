@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      Players 
+      Players Online:
       {playerListItems}
     </div>
   );

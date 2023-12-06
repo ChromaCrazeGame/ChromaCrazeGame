@@ -9,6 +9,7 @@ const LoginPage = () => {
 
   //using state to store users data
   const [ user, setUser ] = useState({});
+  // const [youtubeID] = useState('i-GgLuRGecY');
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -36,10 +37,6 @@ const LoginPage = () => {
     document.getElementById('signInDiv').hidden = false;
   }
 
-  function handleNavigate() {
-    navigate('/gamepage');
-  }
-
   //useEffect will render once page is loaded
   useEffect(() => {
     /* global google */
@@ -61,12 +58,18 @@ const LoginPage = () => {
 
   return (
     <div className="App">
+      <h1>Welcome To The ChromaCraze Game!</h1>
+      <iframe className='video'
+        width="350"
+        height="550"
+        src={'https://youtube.com/embed/i-GgLuRGecY?rel=0&autoplay=1&mute=1'}>
+      </iframe>
+      
       <div id="signInDiv"></div>
       {/* conditionally render by using && op */}
       { Object.keys(user).length != 0 &&
             <div>
               <button onClick={(e) => handleSignOut(e)}>Sign Out</button>
-              {/* <button onClick={(e) => handleNavigate(e)}>Play</button> */}
             </div>
       }
       { user &&
