@@ -15,15 +15,18 @@ const initialState = {
 
 const boardReducer = (state = initialState, action) => {
   switch (action.type) {
-  case CHANGE_COLOR:
-    // let newSquare = {
-    //   color: action.payload[0],
-    //   squareId: action.payload[1],
-    // }
-    // if (state.square.squareId === action.payload[1]) {
-    //   return Object.assign({}, state, {square: {color: action.payload[0], squareId: action.payload[1]}});
-    // }
-    return Object.assign({}, state, {square: {color: action.payload[0], squareId: action.payload[1]}});
+  case CHANGE_COLOR: {
+    const board = state.board.slice();
+    const row   = action.payload.row;
+    const col   = action.payload.column;
+    
+    board[row][col] = action.payload.color;
+
+    return {
+      ...state,
+      board,
+    };
+  }
   default:
     return state;
   }
