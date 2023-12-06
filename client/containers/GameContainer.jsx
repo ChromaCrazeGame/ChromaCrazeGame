@@ -5,7 +5,9 @@ import { socket } from '../socket';
 
 import Timer from '../components/Timer';
 import GameBoard from '../components/GameBoard';
+import Sidebar from '../components/Sidebar';
 import SocketTester from '../components/SocketTester';
+import '../styles.css';
 
 const GameContainer = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
@@ -62,6 +64,7 @@ const GameContainer = () => {
     <div>
       <Timer/>
       <GameBoard />
+      <Sidebar />
     </div>
   );
 };
