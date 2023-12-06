@@ -2,6 +2,7 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+<<<<<<< HEAD
     entry: '/client/index.js',
     mode: process.env.NODE_ENV,
     output: {
@@ -46,4 +47,52 @@ module.exports = {
         extensions: ['.js', '.jsx'],
     },
     devtool: 'eval-source-map',
+=======
+  entry: '/client/index.js',
+  mode: process.env.NODE_ENV,
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+      {
+        test: /\.s?css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|gif)$/,
+        type: 'asset/resource'
+      },
+    ],
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './client/index.html',
+    }),
+  ],
+  devServer: {
+    port: 8080,
+    proxy: {
+      '/socket.io': {
+        target: 'http://localhost:3000',
+        ws: true,
+      },
+    },
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+>>>>>>> dev
 };
