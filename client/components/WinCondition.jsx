@@ -34,11 +34,8 @@ function WinCondition(){
     Player30 : 38,
   };
   const playerArray = Object.entries(player);
-  console.log(playerArray);
   const winningScore = playerArray.sort((a, b) => b[1] - a[1])[0][1];
-  console.log('winningscore:' ,winningScore);
   const winningPlayers = playerArray.filter((player) => player[1] === winningScore).map((player) => player[0]);
-  console.log(winningPlayers.join(', '));
   let multipleWinner = true;
   if (winningPlayers.length === 1) {multipleWinner = false;}
   return (
