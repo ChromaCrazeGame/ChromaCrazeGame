@@ -7,8 +7,6 @@ import SocketTester from './SocketTester';
 import LoginPage from './LoginPage';
 import GameContainer from '../containers/GameContainer';
 
-// gameboard path currently giving 404, looking into client side vs server side rendering
-
 const App = () => {
   const [isConnected, setIsConnected] = useState(socket.connected);
   const [gameState, setGameState] = useState({});
@@ -66,10 +64,10 @@ const App = () => {
         <Route path='/' element={<LoginPage/>}/>
         <Route path='/gamepage' element={<GameContainer/>}/> 
       </Routes>
-      <SocketTester
+      {/* <SocketTester
         isConnected={isConnected ? 'true' : 'false'}
         demoButtonPresses={gameState.demoButtonPresses}
-      />
+      /> */}
     </div>
   );
 };
