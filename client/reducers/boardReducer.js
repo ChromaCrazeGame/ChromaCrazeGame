@@ -1,6 +1,3 @@
-// here we want initialState declared for the board
-// do i want to stuff every piece of state in here tho...
-
 import { CHANGE_COLOR } from '../constants/actionTypes';
 
 // create a 2d array that represents the gameboard
@@ -19,7 +16,7 @@ const boardReducer = (state = initialState, action) => {
     const board = state.board.slice();
     const row   = action.payload.row;
     const col   = action.payload.column;
-    
+
     board[row][col] = action.payload.color;
 
     return {
