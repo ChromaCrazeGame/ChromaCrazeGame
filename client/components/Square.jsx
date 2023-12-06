@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Square = () => {
+    const [color, setColor] = useState('white');
     const clickHandler = () => {
-        console.log('color changed!');
+        setColor('red');
     };
+
     return (
-        <>
-            <div id="square" onClick={clickHandler}></div>
-        </>
+        <div id="square" style={ { backgroundColor: color } } onClick={clickHandler}></div>
     );
 };
 
