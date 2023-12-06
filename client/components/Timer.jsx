@@ -48,7 +48,7 @@ const Timer = () => {
   //if the timer is over and game has ended, displaying the winner
   //if the game state is not over, displaying start button to start game
   return (
-    <div>
+    <header id="game_header">
       <h1 id='gameTimeRemaining' >Game Time Remaining: {seconds} seconds</h1>
       {gameOver ? (
         <>
@@ -58,7 +58,7 @@ const Timer = () => {
       ) : (
         <button id='startGameButton' onClick={startGame}>Start Game</button>
       )}
-    </div>
+    </header>
   );
 };
 
