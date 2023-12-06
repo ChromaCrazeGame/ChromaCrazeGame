@@ -30,7 +30,7 @@ const LoginPage = () => {
   }
 
   function handleNavigate() {
-    navigate('/gameboard');
+    navigate('/gamepage');
   }
 
   //useEffect will render once page is loaded
