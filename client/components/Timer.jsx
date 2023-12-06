@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import WinCondition from './WinCondition';
 
 
 const Timer = () => {
@@ -10,7 +11,7 @@ const Timer = () => {
   const [gameOver, setGameOver] = useState(false);
     
   //proof of concept to display back winner-> should be modified to the state change of winning player
-  const winner = 'The Winner is Player 1';
+  const winner = <WinCondition />;
   
   useEffect(() => {
     let interval;
@@ -48,14 +49,14 @@ const Timer = () => {
   //if the game state is not over, displaying start button to start game
   return (
     <div>
-      <h1>Game Time Remaining: {seconds} seconds</h1>
+      <h1 id='gameTimeRemaining' >Game Time Remaining: {seconds} seconds</h1>
       {gameOver ? (
         <>
-          <p>Game has ended! {winner}</p>
-          <button onClick={startGame}>Start New Game</button>
+          <h2 id='gameHasEnded' >Game has ended! {winner}</h2>
+          <button id='startGameButton' onClick={startGame}>Start New Game</button>
         </>
       ) : (
-        <button onClick={startGame}>Start Game</button>
+        <button id='startGameButton' onClick={startGame}>Start Game</button>
       )}
     </div>
   );
