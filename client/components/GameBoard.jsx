@@ -8,7 +8,7 @@ const GameBoard = () => {
     rows.push(<Row key={`row${i}`} row={i}/>);
   }
   return (
-    <div>
+    <div id="gameboard">
       {rows}
     </div>
   );
